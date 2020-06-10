@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			table
+			{
+				width: 100%;
+				text-align: center;
+			}
+
+		table.type06 {
+    border-collapse: collapse;
+    text-align: left;
+    line-height: 1.5;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    margin: 20px 10px;
+	}
+
+	table.type06 th {
+    width: 150px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+	}
+
+	table.type06 td {
+    width: 350px;
+    padding: 10px;
+    vertical-align: top;
+	}
+
+	table.type06 .even {
+    background: #efefef;
+	}
+
+	row header h2
+	{
+			margin-right: 50px;
+	}
+			#nav
+			{
+				position: absolute;
+				right: 0em;
+				top: 2.2em;
+			}
+
+				#nav > ul > li
+				{
+					float: left;
+				}
+
+					#nav > ul > li:last-child
+					{
+						padding-right: 0;
+					}
+
+					#nav > ul > li > a,
+					#nav > ul > li > span
+					{
+						display: block;
+						margin-left: 0.7em;
+						padding: 0.80em 1.2em;
+						letter-spacing: 0.06em;
+						text-decoration: none;
+						text-transform: uppercase;
+						font-size: 1.1em;
+						outline: 0;
+						color: #333;
+					}
+
+					#nav li.active a
+					{
+						background: #e95d3c;
+						border-radius: 5px;
+						color: #FFF;
+					}
+
+					#nav > ul > li > ul
+					{
+						display: none;
+					}
+
+					section,
+					article
+					{
+						margin-bottom: 3em;
+					}
+
+					section > :last-child,
+					article > :last-child
+					{
+						margin-bottom: 0;
+					}
+
+					section:last-child,
+					article:last-child
+					{
+						margin-bottom: 0;
+					}
+
+					.row > section,
+					.row > article
+					{
+						margin-bottom: 0;
+					}
+
+					#Pic
+					{
+						position: relative;
+					}
+
+					#Pic header h2
+					{
+						font-size: 1.6em;
+					}
+
+					#3u img
+					{
+						height: 200px;
+						width: 200px;
+					}
+					p, ul, ol, dl, table
+					{
+						margin-bottom: 1em;
+					}
+
+					#p img
+					{
+						height: 200px;
+						width: 200px;
+					}
+
+		.logo
+		{
+				text-align: center;
+		}
+
+		li {
+ 		 display:inline;
+ 		 border-left:1px solid #999;
+ 		 font:bold 12px Dotum;
+ 		 padding:0 10px;
+ 	 }
+
+ 	 </style>
+ 	 <style type="text/css">
+
+ 	 a:link { text-decoration:none; color:#000000;}
+ 	 a:visited { text-decoration:none;color:#000000;}
+ 	 a:active {text-decoration:none; color:#0000FF; }
+ 	 </style>
+	</head>
+	<body class="party">
+    <div id="header">
+			<div class="container">
+
+				<!-- Logo -->
+					<div id="logo">
+						<h1 style = "text-align: center;">정당</h1>
+					</div>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="http://localhost:3000/Home">Home</a></li>
+						</ul>
+					</nav>
+
+			</div>
+		</div>
+
+    <div id = "new1">
+    <table border="1">
+      <tr>
+          <td>번호</td>
+          <td>정당명</td>
+          <td>원내대표</td>
+        </tr>
+				<div class = "Pic">
+				<% for(var i = 0; i < 8; i++)
+				{
+					if(i == 0){%>
+						<div class="row">
+						<div style= "display: inline-block">
+						<a href="1/<%= party[i].Party_Name %>"><img src="https://theminjoo.kr/Index/logo_view/32"  style="height: 250px; width: 330px; margin: 50px;">
+						<h2 style = "margin-left: 130px;"><%= party[i].Party_Name %></h2>
+						</div>
+					<%}else if(i == 1){%>
+						<div style= "display: inline-block">
+						<a href="1/<%= party[i].Party_Name %>"><img src="http://bareunmirae.kr/images/common/logo.png"  style="height: 250px; width: 330px; margin: 50px;">
+						<h2 style = "margin-left: 130px;"><%= party[i].Party_Name %></h2>
+						</div>
+					<%}else if(i == 2){%>
+						<div style= "display: inline-block">
+						<a href="1/<%= party[i].Party_Name %>"><img src="https://www.justice21.org/newhome/asset/images/commons/top_logo_main.png"  style="height: 250px; width: 330px; margin: 50px;">
+						<h2 style = "margin-left: 180px;"><%= party[i].Party_Name %></h2>
+						</div>
+					</div>
+					<%}else if(i == 3){%>
+						<div class="row">
+						<div style= "display: inline-block">
+						<a href="1/<%= party[i].Party_Name %>"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Logo_of_the_Minjung_Party.svg/330px-Logo_of_the_Minjung_Party.svg.png"  style="height: 300px; width: 250px; margin: 50px;">
+						<h2 style = "margin-left: 150px;"><%= party[i].Party_Name %></h2>
+						</div>
+					<%}else if(i == 4){%>
+						<div style= "display: inline-block">
+						<a href="1/<%= party[i].Party_Name %>"><img src="https://t1.daumcdn.net/news/201808/04/imbc/20180804103711211igfb.jpg"  style="height: 250px; width: 330px; margin: 50px;">
+						<h2 style = "margin-left: 170px;"><%= party[i].Party_Name %></h2>
+						</div>
+					<%}else if(i == 5){%>
+						<div style= "display: inline-block">
+						<a href="1/<%= party[i].Party_Name %>"><img src="http://ourrepublicanparty.kr/main/img/main/logo.png?ver=2"  style="height: 250px; width: 330px; margin: 50px;">
+						<h2 style = "margin-left: 150px;"><%= party[i].Party_Name %></h2>
+						</div>
+					</div>
+					<%}else if(i == 6){%>
+						<div class="row">
+						<div style= "display: inline-block">
+						<a href="1/<%= party[i].Party_Name %>"><img src="http://www.libertykoreaparty.kr/images/lkp3main/logo.png"  style="height: 250px; width: 330px; margin: 50px;">
+						<h2 style = "margin-left: 130px;"><%= party[i].Party_Name %></h2>
+						</div>
+					<%}else{%>
+						<div style= "display: inline-block">
+						<a href="1/<%= party[i].Party_Name %>"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/It-%E7%84%A1.png"  style="height: 250px; width: 330px; margin: 50px;">
+						<h2 style = "margin-left: 160px;"><%= party[i].Party_Name %></h2>
+						</div>
+						</div>
+					<%}%>
+				<%}%>
+				</div>
+
+				<br>
+        <%
+        for(var i = (page*10)-10; i < (page*10); i++) {
+          if(i > leng){
+            i++;
+          }else{
+            var data = party[i]
+            %>
+            <tr>
+              <td><%= i + 1 %></td>
+              <td><a href="1/<%= data.Party_Name %>"><%= data.Party_Name %></td>
+              <td><%= data.Floorleader %></td>
+            </tr>
+      <% }
+      }
+      %>
+        </div>
+				</table>
+				<div class="container">
+					<ul class ="pager" style = "text-align : center;">
+						<%
+						if(curSet > 1){
+							%>
+							<li value=(startPage -1) class="previous">
+								<a href='/Party/<%= ( startPage - 1) %>'>이전페이지</a>
+							</li>
+							<%}%>
+							<%
+							for(var i = startPage; i <= endPage; i++){
+								if(i > totalPage){break;}
+								if(i == page){
+								%>
+								<li value=<%= i %> class='' >
+									<a href='/Party/<%= i %>'>
+										<%= i %>
+									</a>
+								</li>
+								<%
+							}else{
+								%>
+								<li value=<%= i %> class='active' >
+									<a href='/Party/<%= i %>'>
+										<%= i %>
+									</a>
+								</li>
+								<%}%>
+								<%}%>
+								<%
+								if(curSet < totalSet){
+									%>
+									<li value=( endPage + 1) class="next">
+										<a href='/Party/<%= ( endPage + 1) %>'>다음페이지</a>
+									</li>
+									<%}%>
+								</ul>
+							</div>
+</body>
+</html>

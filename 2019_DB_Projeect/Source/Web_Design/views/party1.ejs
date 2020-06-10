@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>정당</title>
+		<style>
+			table
+			{
+				width: 100%;
+				text-align: center;
+			}
+
+		table.type06 {
+    border-collapse: collapse;
+    text-align: left;
+    line-height: 1.5;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    margin: 20px 10px;
+	}
+
+	table.type06 th {
+    width: 150px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+	}
+
+	table.type06 td {
+    width: 350px;
+    padding: 10px;
+    vertical-align: top;
+	}
+
+	table.type06 .even {
+    background: #efefef;
+	}
+
+	row header h2
+	{
+			margin-right: 50px;
+	}
+			#nav
+			{
+				position: absolute;
+				right: 0em;
+				top: 2.2em;
+			}
+
+				#nav > ul > li
+				{
+					float: left;
+				}
+
+					#nav > ul > li:last-child
+					{
+						padding-right: 0;
+					}
+
+					#nav > ul > li > a,
+					#nav > ul > li > span
+					{
+						display: block;
+						margin-left: 0.7em;
+						padding: 0.80em 1.2em;
+						letter-spacing: 0.06em;
+						text-decoration: none;
+						text-transform: uppercase;
+						font-size: 1.1em;
+						outline: 0;
+						color: #333;
+					}
+
+					#nav li.active a
+					{
+						background: #e95d3c;
+						border-radius: 5px;
+						color: #FFF;
+					}
+
+					#nav > ul > li > ul
+					{
+						display: none;
+					}
+
+					section,
+					article
+					{
+						margin-bottom: 3em;
+					}
+
+					section > :last-child,
+					article > :last-child
+					{
+						margin-bottom: 0;
+					}
+
+					section:last-child,
+					article:last-child
+					{
+						margin-bottom: 0;
+					}
+
+					.row > section,
+					.row > article
+					{
+						margin-bottom: 0;
+					}
+
+					#Pic
+					{
+						position: relative;
+					}
+
+					#Pic header h2
+					{
+						font-size: 1.6em;
+					}
+
+					#3u img
+					{
+						height: 200px;
+						width: 200px;
+					}
+					p, ul, ol, dl, table
+					{
+						margin-bottom: 1em;
+					}
+
+					#p img
+					{
+						height: 200px;
+						width: 200px;
+					}
+
+		.logo
+		{
+				text-align: center;
+		}
+
+		li {
+			display:inline;
+			border-left:1px solid #999;
+			font:bold 12px Dotum;
+			padding:0 10px;
+		}
+	  </style>
+		<style type="text/css">
+
+		a:link { text-decoration:none; color:#000000;}
+		a:visited { text-decoration:none;color:#000000;}
+		a:active {text-decoration:none; color:#0000FF; }
+		</style>
+	</head>
+	<body class="party">
+    <div id="header">
+			<div class="container">
+
+				<!-- Logo -->
+					<div id="logo">
+						<h1 style = "margin-left: 450px;">
+							<%if (member_of_party[0].Member_of_Congress_Party == "더불어민주당"){%>
+							<img src = "data:image/jpeg;base64,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">
+							<%}else{%>
+								<h1 style = "text-align: center;"><%=member_of_party[0].Member_of_Congress_Party%></h1>
+								<%}%>
+						</h1>
+					</div>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="http://localhost:3000/Home">Home</a></li>
+						</ul>
+					</nav>
+
+			</div>
+		</div>
+
+		<br>
+		<br>
+
+    <div idstyle="text-align:center;">
+		<h1 style = "text-align: center;">원내대표명 : <%=leader[0].Member_of_Congress_Name%></h1>
+		</div>
+
+		<%if (member_of_party[0].Member_of_Congress_Party == "더불어민주당"){%>
+		<div class = "Pic">
+			<div class="row">
+				<div style= "display: inline-block">
+				<div id = "1u"><a href="http://localhost:3000/Member/1/<%=member_of_party[0].Member_of_Congress_ID%>"><img src="http://www.assembly.go.kr/photo/9770933.jpg"  style="height: 300px; width: 250px; margin: 50px;"></div>
+				<h2 style = "margin-left: 130px;">강병원</h2>
+				</div>
+			<div style= "display: inline-block">
+			<div id = "1u"><a href="http://localhost:3000/Member/1/<%=member_of_party[1].Member_of_Congress_ID%>"><img src="http://www.assembly.go.kr/photo/9770279.jpg" style="height: 300px; width: 250px; margin: 50px;"></div>
+			<h2 style = "margin-left: 130px;">강창일</h2>
+			</div>
+			<div style="display: inline-block">
+			<div id = "1u"><a href="http://localhost:3000/Member/1/<%=member_of_party[2].Member_of_Congress_ID%>"><img src="http://www.assembly.go.kr/photo/9771007.jpg"  style="height: 300px; width: 250px; margin: 50px;"></div>
+			<h2 style = "margin-left: 130px;">강훈식</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div style="display: inline-block">
+			<a href="http://localhost:3000/Member/1/<%=member_of_party[3].Member_of_Congress_ID%>"><img src="http://www.assembly.go.kr/photo/9770931.jpg"  style="height: 300px; width: 250px; margin: 50px;">
+			<h2 style = "margin-left: 130px;">고용진</h2>
+			</div>
+		<div style="display: inline-block">
+		<a href="http://localhost:3000/Member/1/<%=member_of_party[4].Member_of_Congress_ID%>"><img src="http://www.assembly.go.kr/photo/9771066.jpg"  style="height: 300px; width: 250px; margin: 50px;">
+		<h2 style = "margin-left: 130px;">권미혁</h2>
+		</div>
+		<div style="display: inline-block">
+		<a href="http://localhost:3000/Member/1/<%=member_of_party[5].Member_of_Congress_ID%>"><img src="http://www.assembly.go.kr/photo/9770998.jpg"  style="height: 300px; width: 250px; margin: 50px;">
+		<h2 style = "margin-left: 130px;">권칠승</h2>
+		</div>
+	</div>
+	<div class="row">
+		<div style="display: inline-block">
+		<a href="http://localhost:3000/Member/1/<%=member_of_party[6].Member_of_Congress_ID%>"><img src="http://www.assembly.go.kr/photo/9770937.jpg" style="height: 300px; width: 250px;  margin: 50px;">
+		<h2 style = "margin-left: 130px;">금태섭</h2>
+		</div>
+	<div style="display: inline-block">
+	<a href="http://localhost:3000/Member/1/<%=member_of_party[7].Member_of_Congress_ID%>"><img src="http://www.assembly.go.kr/photo/9770927.jpg"  style="height: 300px; width: 250px; margin: 50px;">
+	<h2 style = "margin-left: 130px;">기동민</h2>
+	</div>
+	<div style="display: inline-block">
+	<a href="http://localhost:3000/Member/1/<%=member_of_party[8].Member_of_Congress_ID%>"><img src="http://www.assembly.go.kr/photo/9770712.jpg" style="height: 300px; width: 250px;  margin: 50px;">
+	<h2 style = "margin-left: 130px;">김경협</h2>
+	</div>
+</div>
+	</div>
+	<%}%>
+    <table class="type06">
+      <tr>
+          <th scope="row">의원번호</th>
+          <th scope="row">정당명</th>
+          <th scope="row">의원 이름</th>
+        </tr>
+            <tr>
+							<%
+			        for(var i = 0; i < leng; i++) {
+			            var data = member_of_party[i]
+			            %>
+							<% if (i % 2 == 0){%>
+									<class="even">
+									<td class="even"><a href="http://localhost:3000/Member/1/<%=data.Member_of_Congress_ID%>"><%= data.Member_of_Congress_ID %></td>
+			            <td class="even"><a href="http://localhost:3000/Member/1/<%=data.Member_of_Congress_ID%>"><%= data.Member_of_Congress_Party %></td>
+				          <td class="even"><a href="http://localhost:3000/Member/1/<%=data.Member_of_Congress_ID%>"><%= data.Member_of_Congress_Name %></td>
+							<%}else{%>
+								<td><a href="http://localhost:3000/Member/1/<%=data.Member_of_Congress_ID%>"><%= data.Member_of_Congress_ID %></td>
+              	<td><a href="http://localhost:3000/Member/1/<%=data.Member_of_Congress_ID%>"><%= data.Member_of_Congress_Party %></td>
+	            	<td><a href="http://localhost:3000/Member/1/<%=data.Member_of_Congress_ID%>"><%= data.Member_of_Congress_Name %></td>
+							<%}%>
+            </tr>
+      <% }%>
+</table>
+</body>
+</html>

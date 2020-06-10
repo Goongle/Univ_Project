@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>기사</title>
+		<style>
+			table
+			{
+				width: 100%;
+				text-align: center;
+			}
+
+		table.type06 {
+		border-collapse: collapse;
+		text-align: left;
+		line-height: 1.5;
+		border-top: 1px solid #ccc;
+		border-bottom: 1px solid #ccc;
+		margin: 20px 10px;
+	}
+
+	table.type06 th {
+		width: 150px;
+		padding: 10px;
+		font-weight: bold;
+		vertical-align: top;
+	}
+
+	table.type06 td {
+		width: 350px;
+		padding: 10px;
+		vertical-align: top;
+	}
+
+	table.type06 .even {
+		background: #efefef;
+	}
+
+	row header h2
+	{
+			margin-right: 50px;
+	}
+			#nav
+			{
+				position: absolute;
+				right: 0em;
+				top: 2.2em;
+			}
+
+				#nav > ul > li
+				{
+					float: left;
+				}
+
+					#nav > ul > li:last-child
+					{
+						padding-right: 0;
+					}
+
+					#nav > ul > li > a,
+					#nav > ul > li > span
+					{
+						display: block;
+						margin-left: 0.7em;
+						padding: 0.80em 1.2em;
+						letter-spacing: 0.06em;
+						text-decoration: none;
+						text-transform: uppercase;
+						font-size: 1.1em;
+						outline: 0;
+						color: #333;
+					}
+
+					#nav li.active a
+					{
+						background: #e95d3c;
+						border-radius: 5px;
+						color: #FFF;
+					}
+
+					#nav > ul > li > ul
+					{
+						display: none;
+					}
+
+					section,
+					article
+					{
+						margin-bottom: 3em;
+					}
+
+					section > :last-child,
+					article > :last-child
+					{
+						margin-bottom: 0;
+					}
+
+					section:last-child,
+					article:last-child
+					{
+						margin-bottom: 0;
+					}
+
+					.row > section,
+					.row > article
+					{
+						margin-bottom: 0;
+					}
+
+					#Pic
+					{
+						position: relative;
+					}
+
+					#Pic header h2
+					{
+						font-size: 1.6em;
+					}
+
+					#3u img
+					{
+						height: 200px;
+						width: 200px;
+					}
+					p, ul, ol, dl, table
+					{
+						margin-bottom: 1em;
+					}
+
+					#p img
+					{
+						height: 200px;
+						width: 200px;
+					}
+
+		.logo
+		{
+				text-align: center;
+		}
+
+		li {
+			display:inline;
+			border-left:1px solid #999;
+			font:bold 12px Dotum;
+			padding:0 10px;
+		}
+
+		</style>
+		<style type="text/css">
+
+		a:link { text-decoration:none; color:#000000;}
+		a:visited { text-decoration:none;color:#000000;}
+		a:active {text-decoration:none; color:#0000FF; }
+		</style>
+	<body class="party">
+    <div id="header">
+			<div class="container">
+
+				<!-- Logo -->
+					<div id="logo">
+						<h1 style = "text-align:center;">관련 국회의원</h1>
+					</div>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="http://localhost:3000/Home">Home</a></li>
+						</ul>
+					</nav>
+
+			</div>
+		</div>
+		<br><br>
+    <div id = "new1">
+    <table border="1">
+      <tr>
+          <td>의원 번호</td>
+          <td>의원 이름</td>
+					<td>소속당</td>
+        </tr>
+        <%
+        for(var i = 0; i < lengMem; i++) {
+            var data = _member[i]
+            %>
+            <tr>
+							<td><a href="http://localhost:3000/Member/1/<%= data.Member_of_Congress_ID %>"><%= data.Member_of_Congress_ID %></td>
+              <td><a href="http://localhost:3000/Member/1/<%= data.Member_of_Congress_ID %>"><%= data.Member_of_Congress_Name %></td>
+	            <td><a href="http://localhost:3000/Party/1/<%=data.Member_of_Congress_Party %>"><%= data.Member_of_Congress_Party %></td>
+            </tr>
+      <% }%>
+</table>
+<br>
+	<h1>관련 안건</h1>
+	<table border="1">
+		<tr>
+				<td>안건 번호</td>
+				<td>안건 제목</td>
+				<td>안건 내용</td>
+			</tr>
+			<%
+			for(var i = 0; i < lengAge; i++) {
+					var data = _agenda[i]
+					%>
+					<tr>
+						<td><a href="http://localhost:3000/Agenda/<%= data.Agenda_ID %>"><%= data.Agenda_ID %></td>
+						<td><a href="http://localhost:3000/Agenda/<%= data.Agenda_ID %>"><%= data.Agenda_Title %></td>
+						<td><a href="http://localhost:3000/Agenda/<%= data.Agenda_ID %>"><%= data.Agenda_Body %></td>
+					</tr>
+					<% }%>
+</table>
+</body>
+</html>
