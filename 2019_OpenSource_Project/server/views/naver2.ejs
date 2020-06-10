@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			table
+			{
+				width: 100%;
+				text-align: center;
+			}
+
+		table.type06 {
+		border-collapse: collapse;
+		text-align: left;
+		line-height: 1.5;
+		border-top: 1px solid #ccc;
+		border-bottom: 1px solid #ccc;
+		margin: 20px 10px;
+	}
+
+	table.type06 th {
+		width: 150px;
+		padding: 10px;
+		font-weight: bold;
+		vertical-align: top;
+	}
+
+	table.type06 td {
+		width: 350px;
+		padding: 10px;
+		vertical-align: top;
+	}
+
+	table.type06 .even {
+		background: #efefef;
+	}
+
+	row header h2
+	{
+			margin-right: 50px;
+	}
+			#nav
+			{
+				position: absolute;
+				right: 0em;
+				top: 2.2em;
+			}
+
+				#nav > ul > li
+				{
+					float: left;
+				}
+
+					#nav > ul > li:last-child
+					{
+						padding-right: 0;
+					}
+
+					#nav > ul > li > a,
+					#nav > ul > li > span
+					{
+						display: block;
+						margin-left: 0.7em;
+						padding: 0.80em 1.2em;
+						letter-spacing: 0.06em;
+						text-decoration: none;
+						text-transform: uppercase;
+						font-size: 1.1em;
+						outline: 0;
+						color: #333;
+					}
+
+					#nav li.active a
+					{
+						background: #e95d3c;
+						border-radius: 5px;
+						color: #FFF;
+					}
+
+					#nav > ul > li > ul
+					{
+						display: none;
+					}
+
+					section,
+					article
+					{
+						margin-bottom: 3em;
+					}
+
+					section > :last-child,
+					article > :last-child
+					{
+						margin-bottom: 0;
+					}
+
+					section:last-child,
+					article:last-child
+					{
+						margin-bottom: 0;
+					}
+
+					.row > section,
+					.row > article
+					{
+						margin-bottom: 0;
+					}
+
+					#Pic
+					{
+						position: relative;
+					}
+
+					#Pic header h2
+					{
+						font-size: 1.6em;
+					}
+
+					#3u img
+					{
+						height: 200px;
+						width: 200px;
+					}
+					p, ul, ol, dl, table
+					{
+						margin-bottom: 1em;
+					}
+
+					#p img
+					{
+						height: 200px;
+						width: 200px;
+					}
+
+		.logo
+		{
+				text-align: center;
+		}
+
+		li {
+			display:inline;
+			border-left:1px solid #999;
+			font:bold 12px Dotum;
+			padding:0 10px;
+		}
+
+		</style>
+		<style type="text/css">
+
+		a:link { text-decoration:none; color:#000000;}
+		a:visited { text-decoration:none;color:#000000;}
+		a:active {text-decoration:none; color:#0000FF; }
+		</style>
+	</head>
+	<body class="Naver" >
+    <div id="header">
+			<div class="container">
+
+				<!-- Logo -->
+					<div id="logo">
+						<h1 style = "text-align:center;">네이버</h1>
+					</div>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="http://localhost:3000/Home">Home</a></li>
+						</ul>
+					</nav>
+					<br>
+
+			</div>
+		</div>
+		<br>
+		<br>
+
+		<p> 내용 검색 결과 </p>
+    <div id = "new1">
+    <table border="1">
+      <tr>
+				<td>번호</td>
+				<td>아이디</td>
+				<td>날짜</td>
+				<td>댓글 내용</td>
+				<td>링크</td>
+        </tr>
+        <%
+        for(var i = 0; i < leng; i++) {
+            var data = naver[i]
+            %>
+            <tr>
+							<td><%= data.Naver_ID %></td>
+              <td><%= data.Naver_Name %></td>
+							<td><%= data.Naver_Date %></td>
+							<td><%= data.Naver_Text %></td>
+              <td><a href="<%= data.Naver_Link %>"><%= data.Naver_Link %></td>
+            </tr>
+      <% }%>
+			</table>
+        </div>
+
+				<p> 닉네임 검색 결과 </p>
+				<div id = "new1">
+		    <table border="1">
+		      <tr>
+						<td>번호</td>
+						<td>아이디</td>
+						<td>날짜</td>
+						<td>댓글 내용</td>
+						<td>링크</td>
+		        </tr>
+		        <%
+		        for(var i = 0; i < leng1; i++) {
+		            var data = naver1[i]
+		            %>
+		            <tr>
+									<td><%= data.Naver_ID %></td>
+		              <td><%= data.Naver_Name %></td>
+									<td><%= data.Naver_Date %></td>
+									<td><%= data.Naver_Text %></td>
+		              <td><a href="<%= data.Naver_Link %>"><%= data.Naver_Link %></td>
+		            </tr>
+		      <% }%>
+					</table>
+		        </div>
+
+</body>
+</html>
